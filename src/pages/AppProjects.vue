@@ -34,7 +34,7 @@ export default {
         });
     }
   },
-  mounted() {    
+  mounted() {
     this.apiCall(store.apiEndPoint, store.projectsApi);
     this.apiCall(store.apiEndPoint, store.typesApi);
     this.apiCall(store.apiEndPoint, store.technologiesApi);
@@ -48,18 +48,43 @@ export default {
     <div class="container">
       <h1>Progetti</h1>
       <div class="project-filter float-start p-3">
-        <h4>Types:</h4>
-        <div class="input-group mb-3">
-          <div class="input-group-text">
-            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-          </div>
-          <input type="text" class="form-control" aria-label="Text input with checkbox">
+        <h4 class="mt-3">Types:</h4>
+        <div class="form-check form-switch">
+          <input class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault">
+          <label class="form-check-label"
+            for="flexSwitchCheckDefault">All</label>
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-text">
-            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-          </div>
-          <input type="text" class="form-control" aria-label="Text input with checkbox">
+        <div class="form-check form-switch"
+          v-for="(type) in store.typesApiResult"
+          :key="type.id">
+          <input class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault">
+          <label class="form-check-label"
+            for="flexSwitchCheckDefault">{{ type.name }}</label>
+        </div>
+        <h4 class="mt-3">Technologies:</h4>
+        <div class="form-check form-switch">
+          <input class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault">
+          <label class="form-check-label"
+            for="flexSwitchCheckDefault">All</label>
+        </div>
+        <div class="form-check form-switch"
+          v-for="(technology) in store.technologiesApiResult"
+          :key="technology.id">
+          <input class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault">
+          <label class="form-check-label"
+            for="flexSwitchCheckDefault">{{ technology.name }}</label>
         </div>
       </div>
 
@@ -73,12 +98,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-  .project-filter {
-    width: 15%;
-  }
-  .project-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-</style>
+.project-filter {
+  width: 15%;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}</style>

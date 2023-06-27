@@ -6,7 +6,6 @@ export const store = reactive({
   typesApi: '/types',
   technologiesApi: '/technologies',
   imageApi: '/image',
-  apiResults: null,
   projectsApiResult: null,
   typesApiResult: null,
   technologiesApiResult: null,
