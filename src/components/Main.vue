@@ -18,7 +18,6 @@ export default {
         .get(store.apiEndPoint)
         .then((results) => {
           store.apiResult = results.data;
-          console.log(results);
         });
     },
     getImgPath() {

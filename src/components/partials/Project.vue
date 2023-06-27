@@ -23,19 +23,19 @@ export default {
     <img :src="setImageUrl"
       :alt="project.title">
     <h2>{{ project.title }}</h2>
+    <h4>Type: </h4>
     <p>
-      <h4>Type: </h4>
       <span>{{ project.type.name }}</span>
     </p>
+    <h4>Technologies: </h4>
     <p>
-      <h4>Technologies: </h4>
       <span v-for="technology in project.technologies"
         :key="technology.id">
         {{ technology.name + ' ' }}
       </span>
     </p>
+    <h4>Summary: </h4>
     <p>
-      <h4>Summary: </h4>
       {{ project.summary }}
     </p>
     <a :href="project.link">{{ project.link }}</a>
