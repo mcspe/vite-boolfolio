@@ -13,7 +13,8 @@
 
 <template>
   <Header />
-  <Main />
+  <router-view></router-view>
+  <!-- <Main /> -->
 </template>
 
 <style>
