@@ -6,9 +6,6 @@ export default {
     return {
       routes: router.getRoutes()
     }
-  },
-  mounted() {
-    console.log(router.getRoutes());
   }
 }
 </script>

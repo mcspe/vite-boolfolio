@@ -44,9 +44,9 @@ export default {
 
 <style lang="scss" scoped>
 .project {
-  width: 25%;
+  width: 30%;
   padding: 1rem;
-  margin: 1.5rem;
+  margin: 1.5rem 0;
   border: 1px solid black;
 }
 </style>
