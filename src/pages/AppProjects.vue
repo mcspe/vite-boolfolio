@@ -97,6 +97,7 @@ export default {
         </div>
   
         <div class="project-container">
+          <!-- {{ store.projectsApiResult[0] }} -->
           <Project v-for="project in store.projectsApiResult"
             :key="project.id"
             :project="project" />

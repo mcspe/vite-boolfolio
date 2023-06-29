@@ -1,6 +1,7 @@
 <script>
   export default {
-    name: 'AppProjectDetail'
+    name: 'AppProjectDetail',
+    props: ['slug']
   }
 </script>
 
