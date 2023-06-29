@@ -20,13 +20,10 @@ export default {
 
 <template>
   <div class="project">
-    <img :src="setImageUrl"
-      :alt="project.title">
     <h2>
-      <a :href="'/project/' + project.slug">{{ project.title }}</a>
-      <!-- <router-link :to="{name: 'project-detail'}">
+      <router-link :to="{ name: 'project-detail', params: { slug: project.slug } }">
         {{ project.title }}
-      </router-link> -->
+      </router-link>
     </h2>
     <p>
       <span class="badge rounded-pill text-bg-primary"
@@ -39,10 +36,6 @@ export default {
         :key="technology.id">
         {{ technology.name }}
       </span>
-    </p>
-    <h4>Summary: </h4>
-    <p>
-      {{ project.summary }}
     </p>
     <a :href="project.link">{{ project.link }}</a>
   </div>
@@ -63,4 +56,5 @@ export default {
       color: blue;
     }
   }
-}</style>
+}
+</style>

@@ -31,9 +31,6 @@ export default {
             case '/technologies':
               store.technologiesApiResult = results.data;
               break;
-            case '/image':
-              store.imgPath = results.data;
-              break;
           }
           this.loaded = true;
         });
@@ -43,7 +40,6 @@ export default {
     this.apiCall(store.apiEndPoint, store.projectsApi);
     this.apiCall(store.apiEndPoint, store.typesApi);
     this.apiCall(store.apiEndPoint, store.technologiesApi);
-    this.apiCall(store.apiEndPoint, store.imageApi);
   }
 };
 </script>
@@ -97,7 +93,6 @@ export default {
         </div>
   
         <div class="project-container">
-          <!-- {{ store.projectsApiResult[0] }} -->
           <Project v-for="project in store.projectsApiResult"
             :key="project.id"
             :project="project" />

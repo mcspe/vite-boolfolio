@@ -1,12 +1,7 @@
 <script>
 import { router } from '../router';
 export default {
-  name: 'Header',
-  data() {
-    return {
-      routes: router.getRoutes()
-    }
-  }
+  name: 'Header'
 }
 </script>
 
@@ -14,9 +9,17 @@ export default {
   <header>
     <div class="container-fluid">
       <ul class="nav d-flex align-items-center">
-        <li v-for="(route, i) in routes"
-          :key="i">
-          <router-link :to="{name: route.name}">{{ route.name }}</router-link>
+        <li>
+          <router-link :to="{name: 'home'}">home</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'projects'}">projects</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'about'}">about</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'contacts'}">contacts</router-link>
         </li>
       </ul>
     </div>
